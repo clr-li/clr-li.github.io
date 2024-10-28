@@ -1,52 +1,76 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Massively by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Claire Li Homepage</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+  <head>
+    <title>Claire Li Homepage</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
+      <!-- Intro -->
+      <div id="intro">
+        <h1>Hi! I'm Claire</h1>
+        <p>
+          I am a rising third year computer science student at the University of
+          Washington. My passion is computer science (AI/ML and systems
+          engineering), but I also have some cool hobbies! I'm a violinist for
+          UW's CPO orchestra and in my free time I like to play (and watch)
+          tennis and piano.
+        </p>
+        <ul class="actions">
+          <li>
+            <a
+              href="#header"
+              class="button icon solid solo fa-arrow-down scrolly"
+              >Continue</a
+            >
+          </li>
+        </ul>
+      </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="index.html">Work</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/claire-li-a8a234253/"
+              class="icon brands fa-linkedin"
+              target="_blank"
+              ><span class="label">Linkedin</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/clr-li"
+              class="icon brands fa-github"
+              target="_blank"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+        </ul>
+      </nav>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Hi! I'm Claire</h1>
-						<p>I am a rising third year computer science student at the University of Washington.
-							My passion is computer science (AI/ML and systems engineering),
-							but I also have some cool hobbies! I'm a violinist for UW's CPO orchestra and in my free time I like
-							to play (and watch) tennis and piano.
-						</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Work</a></li>
-							<li><a href="projects.html">Projects</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/claire-li-a8a234253/" class="icon brands fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/clr-li" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
-							<!-- <article class="post featured">
+      <!-- Main -->
+      <div id="main">
+        <!-- Featured Post -->
+        <!-- <article class="post featured">
 								<header class="major">
 									<span class="date">April 25, 2017</span>
 									<h2><a href="#">And this is a<br />
@@ -61,69 +85,118 @@
 								</ul>
 							</article> -->
 
-						<!-- Posts -->
-						<section class="posts">
-							<article>
-								<header>
-									<span class="date">June 2023 - Current</span>
-									<h2><a href="https://depts.washington.edu/airlab/">UW AIR Lab</a></h2>
-								</header>
-								<a href="#" class="image fit"><img src="images/kf.png" alt="" /></a>
-								<p>
-									I work as an embedded systems engineer under the guidance of Professor Fuller.
-									I came into this lab with no prior experience with C/C++ so I read and practiced the CSE 474 curriculum beforehand.
-									My first project was to design a lightweight state estimation sensor suite along with a fellow lab member. 
-									For this project, I wrote a memory-efficient optical flow algorithm using the Lucas-Kanade method
-									that I initially tested using a potentiometer and later compared with a Crazyflie quadcopter and mocap data. I also customized
-									camera sensor drivers to fit the needs of our project (adjusting frame rate, scaling image size).
-									After we mounted the sensor suite onto the Crazyflie and collected data, I created graphs comparing 
-									the results from the sensor suite and the Crazyflie's onboard sensors (shown above). We will be presenting our project
-									at the 2024 Research Symposium and are currently revising our paper for submission at IEEE RA-L.
-									I am currently working on motor control code for a sub 3g quadcopter.
-								</p>
-								<!-- <ul class="actions special">
-									<li><a href="#" class="button">Full Story</a></li>
-								</ul> -->
-							</article>
-							<article>
-								<header>
-									<span class="date">October 2023 - Current</span>
-									<h2><a href="https://gooey.ai/">Gooey.ai</a></h2>
-								</header>
-								<a href="https://gooey.ai/explore/" class="image fit"><img src="images/gooey.jpg" alt="" /></a>
-								<p>
-									I am a software engineer at <a href="https://gooey.ai">Gooey.ai</a> , a GenAI startup. My focus is the business-related
-									improvements to the company's website. Some of my projects include redesigning the 
-									explore page (shown above) and integrating Paypal which accounts for approximately 15%
-									of the organic revenue. On the backend, I have created dashboards for both the Gooey team
-									(revenue, user engagement, etc.) and customers (workflow performance). 
-									The company was missing key data about what the cost of running a workflow was, so I recorded the token usage 
-									for each llm model. This allowed me to create a more transparent pricing model for the copilot and compare llm workflows.
-									I used Gooey to generate the background for this website!
-								</p>
-							</article>
-							<article>
-								<header>
-									<span class="date">September 2022 - February 2024</span>
-									<h2><a href="https://cascadeenrichment.com/">Cascade Enrichment</a></h2>
-								</header>
-								<a href="https://cascadeenrichment.com/elementary-math-assessments" class="image fit"><img src="images/cascade.jpg" alt="" /></a>
-								<p>
-									During my time at Cascade, I worked as a tech lead and tutor for high school computer science, math, and science.
-									I worked closely with the CEO and my co-tech lead to create assessment software with automatic grading. 
-									The main purpose was to create a user-friendly interface for younger students to use while making it easy for 
-									instructors to give feedback. The assessments are currently being used by Cascade students.
-								</p>
-								<ul class="actions special">
-									<li><a href="https://cascadeenrichment.com/current-news/math-assessments" class="button">Blog Post</a></li>
-								</ul>
-							</article>
-						</section>
-					</div>
+        <!-- Posts -->
+        <section class="posts">
+          <article>
+            <header>
+              <span class="date">June 2023 - Current</span>
+              <h2>
+                <a href="https://depts.washington.edu/airlab/">UW AIR Lab</a>
+              </h2>
+            </header>
+            <a href="#" class="image fit"><img src="images/kf.png" alt="" /></a>
+            <p>
+              I work as an embedded systems engineer under the guidance of
+              Professor Fuller. I came into this lab with no prior experience
+              with C/C++ so I read and practiced the CSE 474 curriculum
+              beforehand. My first project was to design a lightweight state
+              estimation sensor suite along with a fellow lab member. For this
+              project, I wrote a memory-efficient optical flow algorithm using
+              the Lucas-Kanade method that I initially tested using a
+              potentiometer and later compared with a Crazyflie quadcopter and
+              mocap data. In our paper, I wrote a paragraph detailing how our
+              optical flow algorithm
+              <b>reduced computation by approximate 39%</b>. I also customized
+              camera sensor drivers/registers to fit the needs of our project
+              (adjusting frame rate, scaling image size). After we mounted the
+              sensor suite (camera, IMU, and pressure sensor) onto the Crazyflie
+              and collected data, we ran the raw data through a Kalman filter
+              and I created graphs comparing the results from the sensor suite
+              and the Crazyflie's onboard sensors (shown above). We presented
+              our project at the 2024 Research Symposium and
+              <b>submitted our paper to the ICRA-IEEE 2025 conference</b>. I
+              have also previously worked on writing motor control code for a
+              sub 3g quadcopter. I am currently working on developing a tracker
+              for human movement. We have currently created a prototype that
+              demonstrates the positional tracking (in a more convenient way
+              than mocap) using a Matplotlib animation (linked below).
+            </p>
+            <ul class="actions special">
+              <li>
+                <a
+                  href="https://drive.google.com/file/d/1yKHt7oLElv00CVcSlDMgmN4To5daThJc/view?usp=sharing"
+                  class="button"
+                  >Video Demo</a
+                >
+              </li>
+            </ul>
+          </article>
+          <article>
+            <header>
+              <span class="date">October 2023 - Current</span>
+              <h2><a href="https://gooey.ai/">Gooey.ai</a></h2>
+            </header>
+            <a href="https://gooey.ai/explore/" class="image fit"
+              ><img src="images/gooey.jpg" alt=""
+            /></a>
+            <p>
+              I am a software engineer at
+              <a href="https://gooey.ai">Gooey.ai</a>, a GenAI startup. My focus
+              used to be the business-related improvements to the company's
+              website. Some of my projects include redesigning the explore page
+              (shown above) and integrating Paypal which accounts for
+              <b>approximately 15% of the organic revenue</b>. On the backend, I
+              have created dashboards for both the Gooey team (revenue, user
+              engagement, etc.) and customers (workflow performance). The
+              company was missing key data about what the cost of running a
+              workflow was, so I recorded the token usage for each llm model.
+              This allowed me to create a more transparent pricing model for the
+              copilot and compare llm workflows. I used Gooey to generate the
+              background for this website!<br />
+              I left in June 2024 to focus on my internship at Madrona Venture
+              Labs. Gooey asked me to return after my internship ended so I
+              currently work on automating prompt generation. I also worked on
+              improving the animation recipe where I have learned about stable
+              diffusion and running GPUs.
+            </p>
+          </article>
+          <article>
+            <header>
+              <span class="date">September 2022 - February 2024</span>
+              <h2>
+                <a href="https://cascadeenrichment.com/">Cascade Enrichment</a>
+              </h2>
+            </header>
+            <a
+              href="https://cascadeenrichment.com/elementary-math-assessments"
+              class="image fit"
+              ><img src="images/cascade.jpg" alt=""
+            /></a>
+            <p>
+              During my time at Cascade, I worked as a tech lead and tutor for
+              high school computer science, math, and science. I worked closely
+              with the CEO and my co-tech lead to create assessment software
+              with automatic grading. The main purpose was to create a
+              user-friendly interface for younger students to use while making
+              it easy for instructors to give feedback. The assessments are
+              currently being used by Cascade students.
+            </p>
+            <ul class="actions special">
+              <li>
+                <a
+                  href="https://cascadeenrichment.com/current-news/math-assessments"
+                  class="button"
+                  >Blog Post</a
+                >
+              </li>
+            </ul>
+          </article>
+        </section>
+      </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<!-- <section>
+      <!-- Footer -->
+      <footer id="footer">
+        <!-- <section>
 							<form method="post" action="#">
 								<div class="fields">
 									<div class="field">
@@ -144,40 +217,55 @@
 								</ul>
 							</form>
 						</section> -->
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Seattle, WA</p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">cliuw@cs.washington.edu</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/claire-li-a8a234253/" class="icon brands fa-linkedin" target="_blank"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://github.com/clr-li" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+        <section class="split contact">
+          <section class="alt">
+            <h3>Address</h3>
+            <p>Seattle, WA</p>
+          </section>
+          <section>
+            <h3>Email</h3>
+            <p><a href="#">cliuw@cs.washington.edu</a></p>
+          </section>
+          <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/claire-li-a8a234253/"
+                  class="icon brands fa-linkedin"
+                  target="_blank"
+                  ><span class="label">Linkedin</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/clr-li"
+                  class="icon brands fa-github"
+                  target="_blank"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+            </ul>
+          </section>
+        </section>
+      </footer>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; 2024</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul>
+          <li>&copy; 2024</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </div>
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
