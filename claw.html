@@ -143,6 +143,8 @@ pnpm bench:up   # starts postgres on :43101 + bench-server on :13100
 pnpm seed       # seeds ellen/frank/georgia into postgres, writes credentials.json
 pnpm e2e:smoke  # spawns the fleet, runs ~90s, prints observed messages
 
+export OPENAI_API_KEY="your_api_key_here" # ensures your key is set
+
 # Iteration loop:
 pnpm clean:smoke && pnpm seed && pnpm e2e:smoke
 
