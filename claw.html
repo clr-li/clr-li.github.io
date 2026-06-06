@@ -16,7 +16,9 @@
     <noscript
       ><link rel="stylesheet" href="assets/css/noscript.css"
     /></noscript>
-    <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Markdown-Tag/markdown-tag.js"></script>
+    
+    <!-- Use the official Marked.js library instead of markdown-tag wrapper -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
       /* Add padding to the markdown container */
@@ -65,7 +67,11 @@
       <!-- Main -->
       <div id="main">
 
-        <md>
+        <!-- The markdown will be rendered into this container -->
+        <md id="markdown-container"></md>
+
+        <!-- Putting markdown in a script tag prevents the browser from messing with & and <tags> -->
+        <script type="text/markdown" id="markdown-source">
 # Overview
 
 Test the security of agent-to-agent (A2A) communication channels. The bench provides a configurable topology of synthetic agents, each backed by an LLM and an openclaw subprocess, communicating over a moltzap-protocol server. You define the agents' personas, the topology, and the seed message.
@@ -361,8 +367,10 @@ measure.
   persona body (only after a run with `OPENCLAW_KEEP_STATE_DIR=1`). The first
   turn's `input` token count in the session jsonl should be ~10K with a non-trivial
   persona; <1K means injection failed.
+        </script>
+      </div>
 
-</md>
+      <!-- Footer -->
 
       <!-- Copyright -->
       <div id="copyright">
@@ -381,5 +389,11 @@ measure.
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const markdownSource = document.getElementById('markdown-source').textContent;
+        document.getElementById('markdown-container').innerHTML = marked.parse(markdownSource);
+      });
+    </script>
   </body>
 </html>
