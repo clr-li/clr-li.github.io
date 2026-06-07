@@ -46,14 +46,61 @@
         </ul>
       </nav>
 
-      <!-- Main -->
       <div id="main">
-      <!-- Copyright -->
-      <div id="copyright">
-        <ul>
-          <li>&copy; 2024</li>
-          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-        </ul>
+        
+        <section class="post">
+          <!-- <p>
+            Below are two example attack scenarios and their results using Claw.<br>
+            <i>Note: Due to the random nature of language models, results may vary across runs.</i>
+          </p> -->
+          <details>
+            <summary>Propagating Worm</summary>
+            <div>
+              <p>Paper link: <a href="https://arxiv.org/pdf/2603.15727">ClawWorm: Self-Propagating Attacks Across LLM Agent Ecosystems</a></p>
+              <p>Paper link: <a href="https://arxiv.org/pdf/2403.02817">Here Comes The AI Worm: Unleashing Zero-click Worms that Target
+GenAI-Powered Applications</a></p>
+              <p>
+                  Notes:<br>
+                  The ClawWorm paper describes the methodology behind executing a self-propagating attack across LLM agents.
+                  We tried the techniques discussed in the paper, such as skill supply chain poisoning and direct instruction replication.
+                  To do this, we also modified the agent's AGENTS.md and SKILL.md file similar to how they did.
+                  We were not able to successfully execute a propagating worm, but this may be due to the fact that the paper didn't use a GPT model. 
+                  Instead they used Minimax-M2.5, DeepSeek-V3.2, GLM-5, and Kimi-K2.5. 
+                  While these are still frontier models, they are not as widely used as GPT-4 so their security may not be as robust.
+                  The paper also notes that they will release their code and prompts "upon completion of responsible disclosure" so we are not able to replicate their systems prompts exactly.
+                  <br><br>
+                  The second paper has a different agent setup with a "RAG-based GenAI-powered application" that accepts user inputs, updates a database, and interfaces with other clients.
+                  The attack part was an adversarial self-replicating prompt, which seems like a specific type of prompt injection. 
+                  We did test different self-replicating prompts but the gpt model would never let them prompagate.
+                  This paper uses the strategy of sending emails, but our system doesn't support sending real emails.
+                  This would be an interesting avenue for future work.  
+              </p>
+
+            </div>
+          </details>
+
+          <details>
+            <summary>Extraction</summary>
+            <div>
+                <p>
+                  Notes:<br>
+                  The goal of an extraction attack is to extract information about another agent.
+                  One way we tried executing this attack was by providing one of the agents with a secret string like a canary id.
+                  As long as the agent knew that the canary was supposed to be kept a secret, the agent wouldn't spread the canary even if another agent asked for it.
+                  We also tried creating scenarios to convince the agent to share the canary, but the agent still wouldn't share it for security reasons.
+              </p>
+            </div>
+          </details>
+
+        </section>
+
+        <!-- Copyright -->
+        <div id="copyright">
+          <ul>
+            <li>&copy; 2024</li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 
