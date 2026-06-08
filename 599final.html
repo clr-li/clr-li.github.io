@@ -236,11 +236,37 @@
             
         </section>
 
+        <section id="data">
+            <h2>Data Collection</h2>
+            <p>
+                Once the hardware was all setup, I went to my neighborhood basketball court to collect data.
+                I wrapped tape around the black plastic edge of the tracker and my right hand wrist, making sure the optic flow camera faced away from my wrist so it was able to sense the motion of pixels.
+                Then I powered the Seeed Studio board with a small battery pack and turned on the wearable by connecting the lipo battery's red and black wires to the device's female header pins.
+                I started by dribling the basketball for five minutes, then I took nine shots halfway between the free throw line and the hoop. I made six out of the nine shots.
+                To make it easier to label the data, I stopped the data collection after each shot so I had nine CSV files for the nine shots.
+                To parse the dribbling data, I wrote a Python script that looked for peaks in the accelerometer data, which corresponded to each dribble.
+            </p>
+
+            <img src="images/shot.png" width="550" alt="Raw shooting data" style="display: block; margin: 0 auto;">
+
+            <center>
+                <p>
+                    Some of the raw data from one of the shots.
+                </p>
+            </center>
+        </section>
+
         <section id="software">
             <h2>Software</h2>
             <p>
-                Discuss the software ecosystem powering the project. Break this down into the firmware running on the hardware (C/C++), communication protocols (BLE, I2C, SPI), and any data processing or visualization scripts running on the computer.
+                The software for the wearable device was already written, so my task was to write software for the Seeed Studio board.
+                I wrote INO code in Arduino IDE to upload to the microcontroller.
+                I defined the pins for the SD card and the addresses for Bluetooth connection.
+                One helpful tool I used was the nRF Connect for Mobile app which I used to find the characteristic UUID of the device.
             </p>
+
+            <img src="images/nrfconnect.png" width="200" alt="nRF Connect app" style="display: block; margin: 0 auto;">
+
         </section>
 
         <section id="demo">
