@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <style>
+        /* Base Theme */
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #333333;
+            --accent-color: #4A90E2;
+            --code-bg: #eef1f5;
+            --border-color: #eaeaea;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Typography */
+        header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #111;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.4rem;
+            margin-top: 3rem;
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .author-info {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        /* Layout Utilities */
+        .split-section {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .split-text, 
+        .split-image {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .split-section {
+                flex-direction: column;
+            }
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background-color: #f5f7fa;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Media & Code */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin: 0 0 1.5rem 0;
+        }
+
+        .demo-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+            background: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .demo-container iframe,
+        .demo-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        code {
+            background: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 0.9em;
+            color: #d63384;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Edge Basketball</h1>
+        <div class="author-info">
+            <strong>By Claire Li</strong><br>
+            <time datetime="2026-06-05">June 2026</time>
+        </div>
+    </header>
+
+    <main>
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <p>
+                Wearables are generally small and wireless so they don't get in the way of daily tasks.
+                Some wearables like Meta's Ray Bans and Google's Fitbit will run models on device.
+                My project consists of two parts: (1) improving the form factor of a wearable for sports use
+                and (2) writing a classification model for basketball dribbling and shots. 
+                To do this, I sent bluetooth data from the wearable to a small microcontroller, 
+                eliminating the need for a bulky phone or computer to be present while wearing the device.
+                Then I collected data while wearing the device and trained a small CNN model.
+            </p>
+        </section>
+
+        <section id="hardware">
+            <h2>Hardware</h2>
+            
+            <div class="split-section">
+                <div class="split-text">
+                    <h3>Current Device</h3>
+                    <p>
+                        The wearable I am using to collect data was built by members of the <a href="https://depts.washington.edu/airlab/">UW Air Lab</a>.
+                        It contains the following sensors:
+                    </p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sensor</th>
+                                <th>Type of Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Accelerometer</td>
+                                <td>Acceleration</td>
+                            </tr>
+                            <tr>
+                                <td>Gyroscope</td>
+                                <td>Angular Velocity</td>
+                            </tr>
+                            <tr>
+                                <td>Optic Flow Camera</td>
+                                <td>Optical Flow</td>
+                            </tr>
+                            <tr>
+                                <td>Time of Flight</td>
+                                <td>Distance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        It uses a 3.7V 45 mAh LiPo battery for power
+                        and can send data wirelessly over Bluetooth.
+                        We previously ran a Python script on a computer to collect data.
+                        However, it is not feasible for basketball players to constantly be near a computer.
+                    </p>
+
+                    <img src="images/tracker.JPG" width="300" alt="Hardware Setup" style="display: block; margin: 0 auto;">
+
+                    <h3>Improvements</h3>
+                    <p>
+                        To fix this issue, I decided to send the data from the wearable device to a small microcontroller instead of a computer.
+                        The microcontroller I used was the Seeed Studio XIAO ESP32-S3. I attached a 64 GB SD card to the microcontroller to store the data.
+                        This supports storing 23 hours of device data. The microcontroller's dimensions are 21 x 17.8 x 15mm, which means it is small enough
+                        to be attached to the wearable or fit in a pocket. One issue I ran into was the microcontroller was not able to receive data from the
+                        device unless it was a few centimeters apart. After reading through the documentation, I realized I needed to attach an antenna to
+                        the Seeed Studio board, hence the soldered on wire seen in the image below.
+                    </p>
+
+                    <img src="images/seeed.JPG" width="300" alt="Seeed board" style="display: block; margin: 0 auto;">
+                </div>
+                
+                <!-- <div class="split-image">
+                    <img src="https://via.placeholder.com/400x250" alt="Hardware Component 1">
+                    <img src="https://via.placeholder.com/400x250" alt="Hardware Component 2">
+                </div> -->
+            </div>
+            
+        </section>
+
+        <section id="software">
+            <h2>Software</h2>
+            <p>
+                Discuss the software ecosystem powering the project. Break this down into the firmware running on the hardware (C/C++), communication protocols (BLE, I2C, SPI), and any data processing or visualization scripts running on the computer.
+            </p>
+        </section>
+
+        <section id="demo">
+            <h2>Demo</h2>
+            <p>
+                Here is the system in action. The demonstration below highlights the core functionality of the completed build.
+            </p>
+            
+            <div class="demo-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="future-work">
+            <h2>Future Work</h2>
+            <p>
+                Outline the next steps for this project. Discuss known limitations in the current design and how future iterations could address them to improve accuracy, efficiency, or form factor.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 [Your Name]. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
