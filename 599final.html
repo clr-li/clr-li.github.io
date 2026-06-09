@@ -240,8 +240,14 @@
             <h2>Data Collection</h2>
             <p>
                 Once the hardware was all setup, I went to my neighborhood basketball court to collect data.
-                I wrapped tape around the black plastic edge of the tracker and my right hand wrist, making sure the optic flow camera faced away from my wrist so it was able to sense the motion of pixels.
+                I wrapped tape around the black plastic edge of the tracker and my right hand wrist (dominant shooting hand), making sure the optic flow camera faced away from my wrist so it was able to sense the motion of pixels.
+            </p>
+
+            <img src="images/collect.JPG" width="150" alt="Wearable on wrist" style="display: block; margin: 0 auto;">
+
+            <p>
                 Then I powered the Seeed Studio board with a small battery pack and turned on the wearable by connecting the lipo battery's red and black wires to the device's female header pins.
+                All data collected was stored on the SD card attached to the Seeed Studio board.
                 I started by dribling the basketball for five minutes, then I took nine shots halfway between the free throw line and the hoop. I made six out of the nine shots.
                 To make it easier to label the data, I stopped the data collection after each shot so I had nine CSV files for the nine shots.
                 To parse the dribbling data, I wrote a Python script that looked for peaks in the accelerometer data, which corresponded to each dribble.
@@ -267,23 +273,26 @@
 
             <img src="images/nrfconnect.png" width="200" alt="nRF Connect app" style="display: block; margin: 0 auto;">
 
-        </section>
-
-        <section id="demo">
-            <h2>Demo</h2>
             <p>
-                Here is the system in action. The demonstration below highlights the core functionality of the completed build.
+                Once I had the data collected, I trained a CNN model using TensorFlow on eight randomly selected dribbled segements and eight of the nine shooting CSV files.
+                The model produced a .keras file which I used to make predictions on the remaining dribbling and shooting data. 
+                Below is an example of the model's prediction on a dribbling segment it wasn't trained on.
+                CLASS_0 corresponds to dribbling and CLASS_1 corresponds to shooting.
             </p>
-            
-            <div class="demo-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+
+            <img src="images/model_output.png" width="600" alt="model prediction" style="display: block; margin: 0 auto;">
+
+            <p>
+                I tested the model on the remaining shot that the model wasn't trained on and it was able to accurately label it as CLASS_1.
+                I then ran it on twenty of the dribbling segments that the model wasn't trained on and it was able to label 19 of them as CLASS_0, which is a 95% accuracy.
+            </p>
         </section>
 
         <section id="future-work">
             <h2>Future Work</h2>
             <p>
-                Outline the next steps for this project. Discuss known limitations in the current design and how future iterations could address them to improve accuracy, efficiency, or form factor.
+                Future work on this project would be to collect more data and collect a more diverse range of basketball shots (eg. layup, 3-point shot, etc.).
+                I would also like to run the model on board the microcontroller.
             </p>
         </section>
     </main>
